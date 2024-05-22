@@ -27,6 +27,13 @@ jobs:
                 echo "Morning"
 
             - name: Github Actions 자체에 저장되어 있는 변수 사용해 보기
+              # $GITHUB_SHA: commit의 고유번호
+              # $GITHUB_REPOSITORY: 리포지토리 위치
               run: |
                 echo $GITHUB_SHA
                 echo $GITHUB_REPOSITORY
+
+            - name: 아무한테 노출이 되면 안 되는 값
+              run: |
+                echo ${{ secrets.MY_NMAE }}
+                echo ${{ secrets.MY_HOBBY }}
